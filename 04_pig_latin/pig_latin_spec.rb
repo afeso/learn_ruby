@@ -67,6 +67,14 @@ describe "#translate" do
 
   # Test-driving bonus:
   # * write a test asserting that capitalized words are still capitalized (but with a different initial capital letter, of course)
-  # * retain the punctuation from the original phrase
+  it "keeps Capitalization" do
+    s = translate("Count Dracula")
+    expect(s).to eq("Ountcay Aculadray")
+  end
 
+  # * retain the punctuation from the original phrase
+  it "retains punctuation" do
+    s = translate("What the Heck!")
+    expect(s).to eq("Atwhay ethay Eckhay!")
+  end
 end

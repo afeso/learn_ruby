@@ -6,19 +6,19 @@ attr_accessor :title
     articles = ['the', 'and', 'of', 'in', 'a', 'an']
     # @title.split.map.each(&:capitalize).join(' ')
 
-    new_array = @title.split()
-    empty_array = []
+    words_from_title = @title.split()
+    found_articles = []
 
-    if articles.include?(new_array.first)
+    if articles.include?(words_from_title.first)
       # @title.split.map.each(&:capitalize).join(' ')
-      empty_array.push(new_array.first)
-      new_array = new_array.reverse
-      new_array.pop
+      found_articles.push(words_from_title.first)
+      words_from_title = words_from_title.reverse
+      words_from_title.pop
 
-      # value = new_array.map.each(&:capitalize).reverse.join(' ') + ' ' + empty_array.join.capitalize
+      # value = words_from_title.map.each(&:capitalize).reverse.join(' ') + ' ' + found_articles.join.capitalize
       # value.reverse
-      value = empty_array.join.capitalize
-      value_1 = value + ' ' + new_array.each{|i| i.capitalize! if ! articles.include? i }.reverse.join(' ')
+      value = found_articles.join.capitalize
+      value_1 = value + ' ' + words_from_title.each{|i| i.capitalize! if ! articles.include? i }.reverse.join(' ')
     else
 
       @title.split(' ').each{|i| i.capitalize! if ! articles.include? i }.join(' ')
